@@ -20,23 +20,66 @@ const AddNote = ({ refreshNotes }) => {
     };
 
     return (
-        <div>
-            <h2>Add Note</h2>
+        <div style={styles.container}>
+            <h2 style={styles.header}>Add Note</h2>
             <input
                 type="text"
                 value={courseName}
                 onChange={(e) => setCourseName(e.target.value)}
                 placeholder="Enter course name"
+                style={styles.input}
             />
             <input
                 type="number"
                 value={grade}
                 onChange={(e) => setGrade(e.target.value)}
                 placeholder="Enter grade"
+                style={styles.input}
             />
-            <button onClick={handleAdd}>Add Note</button>
+            <button onClick={handleAdd} style={styles.button}>Add Note</button>
         </div>
     );
+};
+
+const styles = {
+    container: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '20px',
+        backgroundColor: '#f9f9f9',
+        borderRadius: '8px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+        maxWidth: '400px',
+        margin: '20px auto',
+    },
+    header: {
+        marginBottom: '20px',
+        color: '#333',
+        fontSize: '24px',
+        textAlign: 'center',
+    },
+    input: {
+        width: '100%',
+        padding: '10px',
+        marginBottom: '15px',
+        border: '1px solid #ccc',
+        borderRadius: '4px',
+        fontSize: '16px',
+    },
+    button: {
+        padding: '10px 15px',
+        backgroundColor: '#4CAF50',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '4px',
+        cursor: 'pointer',
+        fontSize: '16px',
+    },
+    buttonHover: {
+        backgroundColor: '#45a049',
+    },
 };
 
 export default AddNote;
